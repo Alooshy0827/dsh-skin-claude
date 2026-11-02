@@ -1,0 +1,16 @@
+{
+  "name": "dsh-skin-claude",
+  "version": "0.1.0",
+  "declared_dsh_version": "0.2.1-rc.5",
+  "archive": "dsh-skin-claude-0.1.0.zip",
+  "archive_sha256": "b133bac4af6d65189e10bd2a9d9427aedea1753f320a3c2e7ed1ed1129794f97",
+  "files": {
+    "package.json": "f6f8a9047fd1a3e93f7624165b5ced535961b5300e8ba619dedac3ff9f0b5831",
+    "cordis.patch.yml": "8a0602dc47c73e231ea1b6dd81be0e0a9412db00d6ca462f97e678f8592fa8c1",
+    "icon.svg": "e376b79dde30e5bd13f2b5a83bb840654af0dd0e4bbaf35f68060a0c2205a2fc",
+    "LICENSE": "48c2a4ffde3e8e561806609ed055bbd2b26951f3a2b4e3ef9d132d090324fab5",
+    "INSTALL.md": "e06690e7e589e571dfb75688214b6f43de77acc06d284ebd3ef915fa08f0fa55",
+    "lib/index.js": "159309fa9a4558e0ec4b54452b2161925630a1c2d266761c2198df6212930f91",
+    "lib/client.js": "1a81b5b9a6886e6ff0ed4dad47f2c15a7f3a3a30b46d116fb01f591f201cb14a"
+  }
+}

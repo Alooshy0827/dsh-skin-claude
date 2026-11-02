@@ -1,0 +1,64 @@
+{
+  "skin_version": "0.1.0",
+  "verified_dsh_version": "0.2.1-rc.5",
+  "verified_at": "2026-11-02T08:00:09.708Z",
+  "platform": "macOS; official installed DSH CLI with isolated Web profile",
+  "app_artifact_sha256": "8dad52f295bdbe9fa71948fdf38ac2ce3c910213d3b89c37174b2af77db9fb31",
+  "client_sha256": "1a81b5b9a6886e6ff0ed4dad47f2c15a7f3a3a30b46d116fb01f591f201cb14a",
+  "loaded_stylesheet_sha256": "5b6bc7db582841de5a232753d5146c68b839f35d1d5b5b72746056f84947e8de",
+  "checks": {
+    "light": {
+      "canvas": "#faf9f5",
+      "sidebar": "#f0eee6",
+      "input": "#fdfcf9"
+    },
+    "dark": {
+      "canvas": "#262624",
+      "sidebar": "#201f1c",
+      "input": "#30302d"
+    },
+    "system": {
+      "canvas": "#faf9f5",
+      "dark": false,
+      "skin": "0.1.0"
+    },
+    "disabled": {
+      "canvas": "#151517",
+      "skin": null,
+      "styleCount": 0
+    },
+    "reenable": "passed",
+    "page_reload": {
+      "canvas": "#faf9f5",
+      "dark": false,
+      "input": "#fdfcf9",
+      "sidebar": "#f0eee6",
+      "skin": "0.1.0",
+      "styleCount": 1
+    },
+    "chinese_input_and_delete": "passed; send control enabled for draft and disabled after clearing; no message submitted",
+    "narrow_viewport": {
+      "documentWidth": 470,
+      "skin": "0.1.0",
+      "viewport": 470
+    },
+    "plugin_controls_compared": 29,
+    "plugin_control_geometry_identical": true,
+    "console_warnings_and_errors": []
+  },
+  "installed_app_modified": false,
+  "personal_profile_modified": false,
+  "model_messages_sent": 0,
+  "limits": [
+    "Isolated Web profile only; native desktop installation and window chrome not separately tested.",
+    "No actual model responses, terminal output, or third-party plugin combinations tested."
+  ],
+  "automated_checks": {
+    "status": "passed",
+    "test_count": 9,
+    "commands": [
+      "npm run check",
+      "npm test"
+    ]
+  }
+}

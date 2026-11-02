@@ -1,0 +1,102 @@
+/* Component selectors are verified against DSH 0.2.1-rc.5.
+   All rules are opt-in and disappear with the plugin. Host geometry stays native. */
+body[data-dsh-claude-skin] {
+  --dsh-claude-accent: #c96442;
+  --dsh-claude-accent-text: #97482f;
+  --dsh-claude-accent-soft: #f0dfd5;
+  --dsh-claude-focus: #b75c3d;
+  --dsh-claude-shadow: 0 2px 8px #3d39290a, 0 0 0 1px #3d392924;
+  --dsh-claude-focus-shadow: 0 2px 10px #3d39290a, 0 0 0 1px #b75c3d99;
+}
+
+body[data-dsh-claude-skin][data-ds-dark-theme] {
+  --dsh-claude-accent: #d98c6e;
+  --dsh-claude-accent-text: #e3a88f;
+  --dsh-claude-accent-soft: #42332c;
+  --dsh-claude-focus: #d98c6e;
+  --dsh-claude-shadow: 0 2px 8px #00000012, 0 0 0 1px #e8e6dc24;
+  --dsh-claude-focus-shadow: 0 2px 10px #00000012, 0 0 0 1px #d98c6e99;
+}
+
+/* An opaque paper rail replaces the platform's violet material. */
+body[data-dsh-claude-skin] .PIRFFq_sidebarCol {
+  background: var(--dsw-specific-sidebar-fill) !important;
+  box-shadow: inset -1px 0 var(--dsw-alias-border-l1);
+}
+
+body[data-dsh-claude-skin] .kB3qhq_root { background: transparent; }
+
+body[data-dsh-claude-skin] .kB3qhq_newSession {
+  background: var(--dsw-alias-bg-layer-1);
+  border-color: var(--dsw-alias-border-l2);
+  border-radius: var(--dsw-radius-md);
+  color: var(--dsw-alias-label-primary);
+  box-shadow: 0 1px 2px #3d392906;
+}
+
+body[data-dsh-claude-skin] .kB3qhq_newSession:hover {
+  background: var(--dsh-claude-accent-soft);
+  border-color: var(--dsh-claude-accent);
+}
+
+body[data-dsh-claude-skin] .kB3qhq_newSessionContent > svg {
+  color: var(--dsh-claude-accent-text);
+}
+
+body[data-dsh-claude-skin] .kB3qhq_panelActive {
+  background: var(--dsw-specific-sidebar-nav-item-active);
+  color: var(--dsw-alias-label-primary);
+}
+
+/* Editorial type is reserved for the welcome headline. User font settings win. */
+body[data-dsh-claude-skin] ._8tPydW_headline {
+  font-family: var(--dsh-font-family-text, var(--dsw-font-family-brand));
+  font-weight: 400;
+  letter-spacing: -.02em;
+}
+
+body[data-dsh-claude-skin] :is(._8tPydW_fish, .kB3qhq_brandMark) {
+  color: var(--dsh-claude-accent);
+}
+
+body[data-dsh-claude-skin] ._8tPydW_previewBadge {
+  background: var(--dsh-claude-accent-soft);
+  border-color: transparent;
+  color: var(--dsh-claude-accent-text);
+}
+
+body[data-dsh-claude-skin] .JZLxKW_card {
+  box-shadow: var(--dsh-claude-shadow);
+}
+
+body[data-dsh-claude-skin] .JZLxKW_card:focus-within {
+  box-shadow: var(--dsh-claude-focus-shadow);
+}
+
+/* Native send geometry, disabled/stop behavior and keyboard handling are retained. */
+body[data-dsh-claude-skin] .JZLxKW_primary {
+  color: var(--dsw-alias-label-primary-foreground);
+  border-radius: var(--dsw-radius-md);
+}
+
+body[data-dsh-claude-skin] a {
+  text-decoration-color: color-mix(in srgb, currentColor 40%, transparent);
+  text-underline-offset: 3px;
+}
+
+body[data-dsh-claude-skin] ::selection {
+  background: var(--dsh-claude-accent-soft);
+  color: var(--dsw-alias-label-primary);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  body[data-dsh-claude-skin] :is(.kB3qhq_newSession, .kB3qhq_panelRow, .JZLxKW_card, .JZLxKW_primary) {
+    transition: background-color 160ms ease, border-color 160ms ease, box-shadow 160ms ease;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body[data-dsh-claude-skin] :is(.kB3qhq_newSession, .kB3qhq_panelRow, .JZLxKW_card, .JZLxKW_primary) {
+    transition: none;
+  }
+}
