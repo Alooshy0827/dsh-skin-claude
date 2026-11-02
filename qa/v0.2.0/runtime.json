@@ -1,0 +1,72 @@
+{
+  "skin_version": "0.2.0",
+  "verified_dsh_version": "0.2.1-rc.5",
+  "verified_at": "2026-11-02T08:18:02.141Z",
+  "platform": "macOS; installed official DSH desktop and isolated Web profile",
+  "standard_client_sha256": "5e6e230d6bc8086584854211bbc2298888461197b24462c837ff43dd5b84212a",
+  "local_installed_client_sha256": "1658f2315573641813b2d2fd29c04568cd03fc6eb3b9339701e8b8711a7ea89e",
+  "local_loaded_css_sha256": "21bba5d6d24478402efb5a81f7607e877af2227e3eba8fd2f179778478d5aecf",
+  "local_font_proof": {
+    "status": "passed",
+    "faces": [
+      {
+        "family": "DSH Claude Sans",
+        "style": "normal",
+        "status": "loaded"
+      },
+      {
+        "family": "DSH Claude Sans",
+        "style": "italic",
+        "status": "loaded"
+      },
+      {
+        "family": "DSH Claude Serif",
+        "style": "normal",
+        "status": "loaded"
+      },
+      {
+        "family": "DSH Claude Serif",
+        "style": "italic",
+        "status": "loaded"
+      }
+    ]
+  },
+  "actual_font_tokens": {
+    "code": "\"SF Mono\", \"JetBrains Mono\", \"Fira Code\", Consolas, \"Liberation Mono\", Menlo, Courier, \"PingFang SC\", \"Microsoft YaHei\", \"SF Mono\", \"JetBrains Mono\", \"Fira Code\", Consolas, \"Liberation Mono\", Menlo, Courier, \"PingFang SC\", \"Microsoft YaHei\"",
+    "embeddedFonts": 4,
+    "headline": "\"DSH Claude Serif\", \"Songti SC\", \"Noto Serif CJK SC\", Georgia, serif",
+    "prose": "\"DSH Claude Serif\", \"Songti SC\", \"Noto Serif CJK SC\", Georgia, serif",
+    "skin": "0.2.0",
+    "ui": "\"DSH Claude Sans\", -apple-system, BlinkMacSystemFont, \"Segoe UI\", \"PingFang SC\", \"Hiragino Sans GB\", \"Microsoft YaHei\", \"Helvetica Neue\", Helvetica, Arial, sans-serif"
+  },
+  "checks": {
+    "light": "passed",
+    "dark": "passed",
+    "system": "passed",
+    "native_desktop_install": "passed; plugin manager accepted local package v0.2.0",
+    "native_desktop_enable": "passed",
+    "previous_endfield_skin_disabled": true,
+    "native_desktop_full_quit_and_reopen": "passed; Claude skin remains on and previous skin remains off",
+    "native_mixed_chinese_english_input_and_delete": "passed; send control enabled for draft and disabled after clearing; no model message submitted",
+    "console_warnings_and_errors": [],
+    "isolated_font_skin_disable_restore": {
+      "skin": null,
+      "styleCount": 0,
+      "ui": "-apple-system, BlinkMacSystemFont, \"Segoe UI\", \"PingFang SC\", \"Hiragino Sans GB\", \"Microsoft YaHei\", \"Helvetica Neue\", Helvetica, Arial, sans-serif, -apple-system, BlinkMacSystemFont, \"Segoe UI\", \"PingFang SC\", \"Hiragino Sans GB\", \"Microsoft YaHei\", \"Helvetica Neue\", Helvetica, Arial, sans-serif"
+    },
+    "isolated_font_skin_reenable": "passed"
+  },
+  "automated_checks": {
+    "status": "passed",
+    "test_count": 10
+  },
+  "model_messages_sent": 0,
+  "original_claude_app_files_modified": false,
+  "system_fonts_installed": false,
+  "font_binaries_in_git": false,
+  "limits": [
+    "Actual model response typography and terminal output not exercised.",
+    "Changing fonts can naturally change text metrics; no pixel geometry equivalence claim.",
+    "Native desktop screenshots remain local and are excluded from Git."
+  ]
+}

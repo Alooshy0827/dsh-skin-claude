@@ -48,9 +48,9 @@ body[data-dsh-claude-skin] .kB3qhq_panelActive {
   color: var(--dsw-alias-label-primary);
 }
 
-/* Editorial type is reserved for the welcome headline. User font settings win. */
+/* Claude's editorial serif is used for the welcome headline and prose tokens. */
 body[data-dsh-claude-skin] ._8tPydW_headline {
-  font-family: var(--dsh-font-family-text, var(--dsw-font-family-brand));
+  font-family: var(--dsw-font-family-brand);
   font-weight: 400;
   letter-spacing: -.02em;
 }

@@ -2,16 +2,19 @@ import { createHash } from 'node:crypto';
 import { readFile, writeFile, mkdir } from 'node:fs/promises';
 import { fileURLToPath } from 'node:url';
 import path from 'node:path';
+import { fontStyles } from './fonts.mjs';
 
 export const root = fileURLToPath(new URL('../', import.meta.url));
 export const sha256 = value => createHash('sha256').update(value).digest('hex');
 const read = file => readFile(path.join(root, file), 'utf8');
 
-export async function compile() {
-  const [packageText, tokenText, css, template, host] = await Promise.all(
+export async function compile({ fontDirectory } = {}) {
+  const [packageText, tokenText, appearance, template, host] = await Promise.all(
     ['package.json', 'src/tokens.json', 'src/claude.css', 'src/client.template.js', 'src/host.js'].map(read),
   );
   const manifest = JSON.parse(packageText);
+  const fonts = await fontStyles(fontDirectory);
+  const css = fonts.css + '\n' + appearance;
   const tokens = JSON.parse(tokenText);
   for (const [name, pair] of Object.entries(tokens)) {
     if (!/^--[a-z][\w-]+$/.test(name) || !pair || Object.keys(pair).sort().join() !== 'dark,light' ||
@@ -28,7 +31,7 @@ export async function compile() {
     if (client.split(marker).length !== 2) throw new Error(`Expected one template marker: ${marker}`);
     client = client.replace(marker, () => replacement);
   }
-  return { client, host, manifest, tokens, css };
+  return { client, host, manifest, tokens, css, fonts: fonts.files };
 }
 
 export async function build({ check = false } = {}) {

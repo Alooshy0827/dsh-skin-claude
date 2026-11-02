@@ -1,0 +1,25 @@
+{
+  "status": "passed",
+  "faces": [
+    {
+      "family": "DSH Claude Sans",
+      "style": "normal",
+      "status": "loaded"
+    },
+    {
+      "family": "DSH Claude Sans",
+      "style": "italic",
+      "status": "loaded"
+    },
+    {
+      "family": "DSH Claude Serif",
+      "style": "normal",
+      "status": "loaded"
+    },
+    {
+      "family": "DSH Claude Serif",
+      "style": "italic",
+      "status": "loaded"
+    }
+  ]
+}

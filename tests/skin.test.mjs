@@ -3,6 +3,7 @@ import { readFileSync } from 'node:fs';
 import { test } from 'node:test';
 import vm from 'node:vm';
 import { compile, build } from '../scripts/build.mjs';
+import { faces } from '../scripts/fonts.mjs';
 
 const source = readFileSync(new URL('../lib/client.js', import.meta.url), 'utf8');
 const manifest = JSON.parse(readFileSync(new URL('../package.json', import.meta.url), 'utf8'));
@@ -105,13 +106,12 @@ test('unavailable DOM or service leaves the application untouched', () => {
   }
 });
 
-test('only verified tokens change; native font preferences and semantic status colors remain owned by DSH', async () => {
+test('only verified tokens change; code fonts, text sizes and semantic status colors remain owned by DSH', async () => {
   const { tokens } = await compile();
   const contract = JSON.parse(readFileSync(new URL('../docs/host-contract.json', import.meta.url)));
   assert.deepEqual(Object.keys(tokens).sort(), contract.supported_tokens);
   for (const [name, pair] of Object.entries(tokens)) {
     assert.doesNotMatch(name, /state-(error|success|warn)|(?:code|file)-diff|font-size/);
-    assert.notEqual(name, '--dsw-font-family');
     assert.notEqual(name, '--ds-font-family-code');
     assert.deepEqual(Object.keys(pair).sort(), ['dark', 'light']);
   }
@@ -121,12 +121,27 @@ test('skin CSS is scoped, has no layout mutations or external resources, and res
   const { css, client } = await compile();
   const text = css.replace(/\/\*[\s\S]*?\*\//g, '');
   for (const [, selector, declarations] of text.matchAll(/([^{}]+)\{([^{}]*)\}/g)) {
+    if (selector.trim() === '@font-face') continue;
     assert.ok(selector.trim().startsWith('body[data-dsh-claude-skin]'), selector);
     assert.doesNotMatch(declarations, /(?:^|;)\s*(?:display|position|width|height|padding|margin|pointer-events|overflow|z-index|font-size)\s*:/);
   }
   assert.match(css, /prefers-reduced-motion: reduce/);
   assert.doesNotMatch(client, /\b(?:fetch|XMLHttpRequest|WebSocket|localStorage|sessionStorage|eval)\s*[.(]/);
-  assert.doesNotMatch(css, /url\s*\(|@import|@font-face/);
+  assert.doesNotMatch(css, /url\s*\(|@import/);
+  assert.equal((css.match(/@font-face/g) || []).length, 4);
+});
+
+test('Claude Sans and Serif cover regular/italic faces; distributed build contains references, no font binaries', async () => {
+  const { css, tokens, fonts } = await compile();
+  assert.equal(faces.length, 4);
+  assert.match(tokens['--dsw-font-family'].light, /DSH Claude Sans/);
+  assert.match(tokens['--dsw-font-markdown-base-font-family'].light, /DSH Claude Serif/);
+  assert.deepEqual(fonts, []);
+  assert.doesNotMatch(css, /data:font|https?:/);
+  for (const face of faces) {
+    assert.ok(css.includes(`font-family: "${face.family}"`));
+    for (const name of face.local) assert.ok(css.includes(`local("${name}")`));
+  }
 });
 
 function luminance(hex) {
