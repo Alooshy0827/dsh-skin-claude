@@ -1,6 +1,6 @@
 {
-  "dsh_version": "0.2.1-rc.5",
-  "artifact_sha256": "8dad52f295bdbe9fa71948fdf38ac2ce3c910213d3b89c37174b2af77db9fb31",
+  "dsh_version": "0.2.2-rc.5",
+  "artifact_sha256": "6f019878f523428f452957dbaad601c6468051df4093eda8af751ec65226f88e",
   "theme_api": "theme.overrideTokens(source, { token: { light, dark } }) => disposer",
   "module_id": "dsh-skin-claude",
   "supported_tokens": [
@@ -103,11 +103,11 @@
     "--dsw-specific-menu",
     "--dsw-specific-selector",
     "--dsw-specific-sidebar-fill",
+    "--dsw-specific-sidebar-glass-hover",
     "--dsw-specific-sidebar-nav-item-active",
     "--dsw-specific-sidebar-nav-item-active-accent",
-    "--dsw-specific-sidebar-nav-item-hover",
     "--dsw-specific-tip"
   ],
-  "source_evidence": "ev_1582616fa39b37e246f78272dc92f97f5d739bdc72ada6374bba3334f9ee7ba2",
+  "source_evidence": "@deepseek-ai/dsh-client-ui-theme/src/client/index.ts and src/styles, @deepseek-ai/dsh-client-ui-sidebar/src/client/SidebarRoot.tsx in the identified artifact",
   "evidence_scope": "Static analysis of the shipped theme and client runner only; runtime verification is recorded separately."
 }

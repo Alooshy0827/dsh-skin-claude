@@ -2,9 +2,9 @@
 
 给 DeepSeek Harness 换上 Claude 风格外观与 Anthropic Sans / Serif 字体。
 
-**皮肤 v0.2.0 · 最新实测 DSH：`0.2.1-rc.5`**
+**皮肤 v0.2.1 · 适配 DSH `0.2.2-rc.5`**
 
-[下载安装包](releases/dsh-skin-claude-0.2.0.zip) · [字体说明](docs/fonts.md) · [本版验证](qa/v0.2.0/runtime.json)
+[下载安装包](releases/dsh-skin-claude-0.2.1.zip) · [字体说明](docs/fonts.md)
 
 米白画布、暖灰侧栏、陶土橙强调色、柔和圆角输入框。界面使用 Anthropic Sans，欢迎标题和回答正文使用 Anthropic Serif；深色模式使用暖炭灰。跟随 DSH 的浅色、深色和系统外观设置。
 
@@ -19,7 +19,7 @@
 npm run build:local
 ```
 
-脚本从 `/Applications/Claude.app/Contents/Resources/fonts` 读取四个原始可变字体，生成 `local-installations/dsh-skin-claude-0.2.0`。在 DSH **插件 → 添加插件** 中填写该目录的绝对路径，安装并启用。需要 Node.js 20+，没有第三方依赖，无需 `npm install`。
+脚本从 `/Applications/Claude.app/Contents/Resources/fonts` 读取四个原始可变字体，生成 `local-installations/dsh-skin-claude-0.2.1`。在 DSH **插件 → 添加插件** 中填写该目录的绝对路径，安装并启用。需要 Node.js 20+，没有第三方依赖，无需 `npm install`。
 
 其他本地字体目录也可传入：
 
@@ -32,7 +32,7 @@ npm run build:local -- /absolute/path/to/claude/fonts
 ## 普通安装
 
 1. 下载上方 ZIP，解压到一个长期保留的位置。
-2. 在 DSH **插件 → 添加插件** 中填写解压后 `dsh-skin-claude-0.2.0` 文件夹的绝对路径。
+2. 在 DSH **插件 → 添加插件** 中填写解压后 `dsh-skin-claude-0.2.1` 文件夹的绝对路径。
 3. 安装后启用 **dsh-skin-claude**。
 4. 在 **设置 → 外观** 中选择浅色、深色或跟随系统。
 
@@ -56,7 +56,13 @@ npm run build:local -- /absolute/path/to/claude/fonts
 
 插件没有运行依赖、网络请求、远程字体或会话数据访问。普通客户端约 17 KiB；本地完整字体包较大，因为直接内嵌原字体数据。
 
-## 验证
+## v0.2.1 更新
+
+适配 DSH `0.2.2-rc.5` 的插件版本检查、侧栏当前页面标记及悬停颜色。旧版 DSH `0.2.1-rc.5` 可继续使用皮肤 v0.2.0。
+
+已在隔离 DSH 实例中验证浅色和深色背景、四个本机字体字面及中英文输入和清空。运行时加载的样式摘要与本地构建一致。[查看实测记录](qa/v0.2.1/runtime.json)
+
+## v0.2.0 验证记录
 
 2026-11-02 在本机 DSH `0.2.1-rc.5` 完成隔离 Web 客户端验证和原生桌面安装、启用及完整重启验证。
 
@@ -87,7 +93,7 @@ npm run pack:skin
 | `scripts/fonts.mjs` | 原字体的名称、字重与正常/斜体引用 |
 | `scripts/build-local.mjs` | 读取本机原字体，生成本地安装目录 |
 | `lib/` | 可直接安装的普通发行入口 |
-| `qa/v0.2.0/` | 本版隔离实例预览和验证记录 |
+| `qa/v0.2.0/` | v0.2.0 隔离实例预览和验证记录 |
 
 GitHub Actions 自动检查提交的 `lib/` 与源码是否一致，并运行测试。发行 ZIP 带固定时间及 SHA-256 清单；同版本的不同内容不能覆盖。宿主升级后需重新验证接口和 CSS 模块类名。
 

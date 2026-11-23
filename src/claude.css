@@ -1,4 +1,4 @@
-/* Component selectors are verified against DSH 0.2.1-rc.5.
+/* Component selectors are verified against DSH 0.2.2-rc.5.
    All rules are opt-in and disappear with the plugin. Host geometry stays native. */
 body[data-dsh-claude-skin] {
   --dsh-claude-accent: #c96442;
@@ -43,7 +43,7 @@ body[data-dsh-claude-skin] .kB3qhq_newSessionContent > svg {
   color: var(--dsh-claude-accent-text);
 }
 
-body[data-dsh-claude-skin] .kB3qhq_panelActive {
+body[data-dsh-claude-skin] .kB3qhq_panelRow[aria-current="page"] {
   background: var(--dsw-specific-sidebar-nav-item-active);
   color: var(--dsw-alias-label-primary);
 }

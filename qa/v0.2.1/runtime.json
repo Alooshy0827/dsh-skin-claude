@@ -1,0 +1,32 @@
+{
+  "version": "0.2.1",
+  "dshVersion": "0.2.2-rc.5",
+  "css_sha256": "9ba432fd8a5755e299eae90a9a2de2423273c5c755f4e930910287963b33cb83",
+  "appearance": {
+    "light": {
+      "background": "#faf9f5",
+      "headline": "\"DSH Claude Serif\", \"Songti SC\", \"Noto Serif CJK SC\", Georgia, serif",
+      "ui": "\"DSH Claude Sans\", -apple-system, BlinkMacSystemFont, \"Segoe UI\", \"PingFang SC\", \"Hiragino Sans GB\", \"Microsoft YaHei\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+      "faces": [
+        "loaded",
+        "loaded",
+        "loaded",
+        "loaded"
+      ],
+      "styles": 1
+    },
+    "dark": {
+      "background": "#262624",
+      "headline": "\"DSH Claude Serif\", \"Songti SC\", \"Noto Serif CJK SC\", Georgia, serif",
+      "ui": "\"DSH Claude Sans\", -apple-system, BlinkMacSystemFont, \"Segoe UI\", \"PingFang SC\", \"Hiragino Sans GB\", \"Microsoft YaHei\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+      "faces": [
+        "loaded",
+        "loaded",
+        "loaded",
+        "loaded"
+      ],
+      "styles": 1
+    }
+  },
+  "composerInputAndClear": true
+}
